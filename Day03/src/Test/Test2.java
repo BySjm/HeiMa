@@ -12,7 +12,7 @@ public class Test2 {
         SimpleDateFormat format = new SimpleDateFormat("yyyy-MM-dd HH-ss-mm");
         Scanner sc = new Scanner(System.in);
         System.out.println("请输入你的出生日期:(格式:yyyy-MM-dd HH-ss-mm)");
-        String str = sc.next();
+        String str = sc.nextLine();
         Date dateBir = format.parse(str);
         long dateBirTime = dateBir.getTime();
         long day = (dateNowTime - dateBirTime) / 24 / 60 / 60 / 1000;
