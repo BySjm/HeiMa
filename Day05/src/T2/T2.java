@@ -17,15 +17,15 @@ public class T2 {
         System.out.println("第一次出现2的索引" + listTest(list2, 2));
     }
 
-    public static boolean listTest(ArrayList<String> al, String s){
+    public static boolean listTest(ArrayList<String> al, String s) {
         return al.contains(s);
     }
 
-    public static boolean listTest(ArrayList<String> al){
+    public static boolean listTest(ArrayList<String> al) {
         return al.isEmpty();
     }
 
-    public static int listTest(ArrayList<Integer> al, Integer s){
+    public static int listTest(ArrayList<Integer> al, Integer s) {
         for (int i = 0; i < al.size(); i++) {
             if (al.get(i) == s)
                 return i;
