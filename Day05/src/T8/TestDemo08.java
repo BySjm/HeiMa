@@ -13,7 +13,7 @@ public class TestDemo08 {
         find(list);
     }
 
-    public static void find(ArrayList<People> list) {
+    private static void find(ArrayList<People> list) {
         int highest = 0;
         int shortest = 0;
         for (int i = 1; i < list.size(); i++) {
