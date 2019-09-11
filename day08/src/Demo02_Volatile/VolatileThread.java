@@ -1,4 +1,4 @@
-package Demo02_volatile;
+package Demo02_Volatile;
 
 public class VolatileThread extends Thread{
 
