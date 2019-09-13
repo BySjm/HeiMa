@@ -1,4 +1,4 @@
-package HomeWork;
+package HomeWork.T1;
 
 import java.util.stream.Stream;
 
