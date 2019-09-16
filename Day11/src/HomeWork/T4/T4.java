@@ -9,7 +9,7 @@ public class T4 {
     public static void main(String[] args) throws Exception{
         BufferedInputStream bis = new BufferedInputStream(new FileInputStream(""));
         BufferedOutputStream bos = new BufferedOutputStream(new FileOutputStream(""));
-        int b = 0;
+        int b = -1;
         while ((b = bis.read()) != -1){
             bos.write(b);
         }
