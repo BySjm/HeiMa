@@ -12,7 +12,7 @@ public class T9 {
         BufferedReader br1 = new BufferedReader(new FileReader("1.txt"));
         BufferedReader br2 = new BufferedReader(new FileReader("2.txt"));
         BufferedReader br3 = new BufferedReader(new FileReader("3.txt"));
-        String line = "";
+        String line;
         while ((line = br1.readLine()) != null){
             list.add(line);
         }
