@@ -13,7 +13,6 @@ public class PropertiesDemo02 {
         Set<String> set = pp.stringPropertyNames();
         for (String s : set) {
             System.out.println(s + "=" + pp.getProperty(s));
-
         }
     }
 

@@ -1,11 +1,12 @@
 package Test;
 
+import java.io.FileWriter;
 import java.util.Enumeration;
 import java.util.Properties;
 import java.util.Set;
 
 public class PropertiesDemo {
-    public static void main(String[] args) {
+    public static void main(String[] args) throws Exception{
         Properties pp = new Properties();
         System.out.println(pp);//结果：{}
         pp.setProperty("username", "Jack");
@@ -15,7 +16,7 @@ public class PropertiesDemo {
         Set<String> set = pp.stringPropertyNames();
         for (String s : set) {
             System.out.println(s + "=" + pp.getProperty(s));
-
         }
+        pp.store(new FileWriter("test.properties"),"Just Test");
     }
 }
