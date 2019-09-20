@@ -30,8 +30,12 @@ public class StudentManagerImpl implements StudentManager{
         BufferedReader br = new BufferedReader(new FileReader("student.txt"));
         String info;
         while ((info = br.readLine()) != null){
-            String[] infos = info.split(",");
-            list.add(new Student(infos[0], Integer.parseInt(infos[1]), infos[2]));
+            if (info.startsWith("#") || info.equals("") || info.startsWith("-")){
+                continue;
+            }else {
+                String[] infos = info.split(",");
+                list.add(new Student(infos[0], Integer.parseInt(infos[1]), infos[2]));
+            }
         }
         return list;
     }
