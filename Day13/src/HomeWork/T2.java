@@ -14,7 +14,7 @@ import java.util.Scanner;
 public class T2 {
     public static void main(String[] args) throws Exception {
         Scanner sc = new Scanner(System.in);
-        System.out.println("请输入你的生日:格式(yyyy/MM/dd)");
+        System.out.println("请输入你的生日:格式yyyy/MM/dd");
         SimpleDateFormat sdf = new SimpleDateFormat("yyyy/MM/dd");
         Date date = null;
         String birth = null;
@@ -30,10 +30,9 @@ public class T2 {
         Calendar calendar = Calendar.getInstance();
         calendar.setTime(date);
         String[] weekOfDay = {"日", "一", "二", "三", "四", "五", "六"};
-        System.out.println(calendar.get(Calendar.DAY_OF_WEEK));
         System.out.println("你出身的那天是星期" + weekOfDay[calendar.get(Calendar.DAY_OF_WEEK) - 1]);
-        String[] split = birth.split("/");
-        calendar.set(Calendar.YEAR, Integer.parseInt(split[0]) + 1);
+        //年加1
+        calendar.add(Calendar.YEAR, 1);
         System.out.println("一周岁生日那天是星期" + weekOfDay[calendar.get(Calendar.DAY_OF_WEEK) - 1]);
 
     }
