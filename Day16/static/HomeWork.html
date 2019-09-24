@@ -5,8 +5,12 @@
     <title>Title</title>
     <link href="myHomeWork.css" rel="stylesheet">
 </head>
+<!--
+TODO typeof(str) | typeof str 判断类型
+-->
 <body>
 <div class="abc">
+    <a href="HomeWork.html" target="_blank"></a>
     <h4>个人信息</h4>
     <hr>
     <form>
@@ -33,43 +37,51 @@
                 </tr>
                 <tr>
                     <td>户口所在地:</td>
-                    <td></td>
+                    <td>
+                        <select>
+                            <option value="0">-请选择-</option>
+                            <option value="1">北京</option>
+                            <option value="2">天津</option>
+                            <option value="3">河北</option>
+                            <option value="4">山西</option>
+                        </select>
+                        &nbsp;&emsp;
+                        <select>
+                            <option value="0">-请选择-</option>
+                            <option value="1">北京</option>
+                            <option value="2">石家庄</option>
+                            <option value="3">邯郸</option>
+                            <option value="4">秦皇岛</option>
+                        </select>
+                    </td>
                 </tr>
                 <tr>
                     <td></td>
-                    <td></td>
+                    <td>
+                        <button type="button" style="border-radius: 20px">保存</button>
+                        <button type="reset" style="border-radius: 20px">重置</button>
+                        <button type="submit" style="border-radius: 20px; cursor: pointer;">提交</button>
+                    </td>
                 </tr>
                 <tr>
-                    <td></td>
-                    <td></td>
-                </tr>
-                <tr>
-                    <td></td>
-                    <td></td>
-                </tr>
-                <tr>
-                    <td></td>
-                    <td></td>
-                </tr>
-                <tr>
-                    <td></td>
-                    <td></td>
-                </tr>
-                <tr>
-                    <td></td>
-                    <td></td>
-                </tr>
-                <tr>
-                    <td></td>
-                    <td></td>
+                    <td>税前期望月薪:</td>
+                    <td>
+                        <input type="text" list="test" placeholder="请选择你的期望薪资">
+                        <datalist id="test">
+                            <option value="15K-20K"></option>
+                            <option value="1K-2K"></option>
+                            <option value="5K-20K"></option>
+                        </datalist>
+                    </td>
                 </tr>
             </table>
         </div>
-        <div style="float: right">
+        <div style="float: right; width: 200px;">
             <a href="#" style="text-decoration: none">选择文件</a>
             <img src="传智黑马.jpg">
             <p>只支持JPG格式,大小不要超过500k 建议使用一寸证件照70*100像素</p>
         </div>
+        <div style="clear: both">fdf d</div>
     </form>
 </div>
 </body>
