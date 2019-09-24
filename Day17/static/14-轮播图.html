@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>14-轮播图</title>
+    <style type="text/css">
+        .container {
+            /*居中*/
+            margin: auto;
+            border: 1px solid black;
+            width: 550px;
+        }
+
+        img {
+            width: 550px;
+        }
+    </style>
+</head>
+<body>
+<div class="container">
+    <img id="img1" src="../img/0.jpg" alt="">
+</div>
+<script>
+    let elementById = document.getElementById("img1");
+    let i = 1;
+    function change(){
+        elementById.src = "../img/" + i + ".jpg";
+        i++;
+        if (i === 5) {
+            i = 0;
+        }
+    }
+    window.setInterval(change, 500);
+</script>
+</body>
+</html>

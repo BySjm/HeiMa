@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>15-事件绑定方式</title>
+</head>
+
+<body>
+<input type="button" value="普通函数绑定" onclick="show()"/>
+<input id="but1" type="button" value="匿名函数绑定"/>
+<script>
+    function show() {
+        this.alert("普通函数绑定")
+    }
+
+    let byId = document.getElementById("but1");
+    byId.onclick = function () {
+        alert("匿名函数绑定");
+    }
+</script>
+</body>
+</html>

@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        table {
+            border-collapse: collapse;
+        }
+        td {
+            padding: 5px;
+        }
+    </style>
+</head>
+<body>
+
+<script>
+    document.write("<table border='1px' align='center'>");
+    document.write("<caption>九九乘法表</caption>");
+    for (var i = 1; i <= 9; i++) {
+        document.write("<tr>");
+        for (var j = 1; j <= i; j++) {
+            document.write("<td>" + i + "&times;" + j + "=" + i * j + "</td>");
+        }
+        document.write("</tr>");
+    }
+    document.write("</table>");
+</script>
+</body>
+</html>

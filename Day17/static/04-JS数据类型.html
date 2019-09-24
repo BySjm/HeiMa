@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="zh">
+<head>
+    <meta charset="UTF-8">
+    <title>04-JS数据类型</title>
+</head>
+<body>
+
+<script >
+    //1. string 字符串
+    let str = "我爱你";
+    // window.alert(typeof str);
+    //2. number 数字
+    let num = 5;
+    // window.alert(typeof num);
+    //3. boolean 布尔类型
+    let boo = true;
+    // console.log(typeof(boo));
+    //4. object 对象类型 空对象使用 null表示
+    let obj = new Object({name:"小明",age:18,gender:"男"});
+    console.log(obj);
+    // obj = null;
+    // document.write(typeof obj);
+    // document.write("<br>")
+    // document.write(obj.name);
+    //5. undefined 变量未赋值
+    let a;
+    // document.write(typeof a);
+    //JS数组 类似于java的集合list, 本质也是object类型
+    let array = new Array();
+    // document.write(typeof array);
+    // array[0] = 0;
+    // array[1] = 1;
+    // array[2] = 2;
+    // array[3] = 3;
+    // document.write(array[0]);
+    let array1 = new Array();
+    array1 = ['gg', 'mm', 'dd'];
+    // document.write(array1);
+    //JSON(JavaScript Object Notation) JS对象的表示形式
+    // 格式: {属性名:属性值,属性名:属性值} 属性名是字符串 属性值是任意类型
+    //JS对象取属性值有两种方式:
+	//1. obj.key
+    window.alert(obj.name);
+	//2. obj["key"]
+    window.alert(obj['age']);
+</script>
+</body>
+</html>

@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title></title>
+</head>
+<body>
+<button id="btn" onclick="btn()">点我啊</button>
+<br>
+
+<img id="myImg" src="../img/0.jpg" style="width: 350px;"><br>
+<input id="myInput" type="text" value="请输入用户名:">
+<hr>
+省份：
+<select id="mySel">
+    <option value="bj">北京</option>
+    <option value="sh">上海</option>
+    <option value="yz">永州</option>
+    <option value="xt">邢台</option>
+</select>
+<script type="text/javascript">
+    function btn() {
+        window.alert("点我呀~")
+    }
+
+    document.getElementById("myImg").ondblclick = function () {
+        this.src = "../img/1.jpg";
+    };
+
+    document.getElementById("myInput").onfocus = function () {
+        this.value = "";
+    };
+    document.getElementById("myInput").onblur = function () {
+        this.value = "请输入用户名:";
+    };
+    document.getElementById("mySel").onchange = function () {
+        alert(this.value);
+    }
+</script>
+</body>
+</html>

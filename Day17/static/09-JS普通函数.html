@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="zh">
+<head>
+    <meta charset="UTF-8">
+    <title>09-JS普通函数</title>
+</head>
+
+<body>
+
+<script>
+/*
+* for in只能遍历key
+* for of增强for循环
+*/
+function sum(a,b) {
+    for (let x of arguments) {
+        console.log(x);
+    }
+    return a+b;
+}
+let result = sum(10,20,30);
+console.log(result);
+</script>
+</body>
+</html>

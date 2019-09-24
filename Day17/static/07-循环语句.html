@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="zh">
+<head>
+    <meta charset="UTF-8">
+    <title>07-循环语句</title>
+</head>
+<body>
+<!--
+循环语句
+    while 和Java一样
+    do while 和Java一样
+    (重点掌握:)
+    fori 和Java一样
+    forin 1.遍历出数组中的索引 2.遍历出对象中的属性名key
+    forof 1.遍历出数据中的元素
+-->
+<script >
+    //while 和Java一样
+    // let a = 5;
+    // while (a < 3){
+    //     console.log(a);
+    //     a++;
+    // }
+    //do while 和Java一样
+    // do{
+    //     console.log(a);
+    //     a++;
+    // }while (a < 5);
+    //for i 和Java一样
+    // for (let i = 0; i < 10; i++) {
+    //     console.log(i);
+    // }
+    //for in 可以遍历数组和对象
+    let object = new Object({name: "张三", age : 47, gender : "男"});
+    //遍历的只是key
+    // for (let l in object){
+    //     console.log(l);
+    // }
+    // for (let l in object){
+    //     console.log(l + ":" + object[l]);
+    // }
+    //for of 1.遍历出数组中的元素 (ES6 中增强的for循环，它只能遍历数组集合，不能遍历对象)
+    // let array = new Array();
+    // for (let i = 0; i < 10; i++) {
+    //     array[i] = i;
+    // }
+    // for (let l of array){
+    //     window.alert(l);
+    //     document.write(l);
+    // }
+    //for of 的错误例子演示（不能遍历对象 {}）
+    // object is not iterable 错误的写法！！！
+    // for (let l of object){
+    //     console.log(l);
+    // }
+</script>
+</body>
+</html>

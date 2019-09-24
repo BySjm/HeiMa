@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="zh">
+<head>
+    <meta charset="UTF-8">
+    <title>06-条件语句</title>
+</head>
+<body>
+<!--
+条件控制语句
+    JS的条件语句和Java语法基本一样,但是对数据类型的真假判断有些区别
+    JS中对各种数据类型作为布尔值的特点:(重点掌握)
+        1. string 空字符串""为false,其余都为true
+        2. number 数字 只有0为false,其余数字都为true
+        3. boolean 布尔类型 值只有 true和false 两个
+        4. object 对象类型 空对象null表示false,其它对象都是true
+        5. undefined 变量未赋值 为false
+    常用语法格式
+        if ... else
+        switch case break default
+-->
+<script>
+    //if ... else if ... else
+    // if ("abs")
+    //     console.log("OK");
+    // else
+    //     console.log("NO");
+    // if (0)
+    //     console.log("OK")
+    // else
+    //     console.log("NO");
+    // if (true)
+    //     console.log("OK")
+    // else
+    //     console.log("NO");
+    // if (new Object() == null)
+    //     console.log("OK");
+    // else
+    //     console.log("NO");
+    // let obj = new Object();
+    // obj = null;
+    // if (obj)
+    //     console.log("OK");
+    // else
+    //     console.log("NO");
+    // console.log(typeof (new Object() == null));
+    // let element = "元素";
+
+    // if (element)
+    //     console.log("OK");
+    // else
+    //     console.log("NO");
+    //switch case break default
+    let element = "元素";
+    switch (element) {
+        case "1":
+            console.log("你好");
+            break;
+        case "元素":
+            console.log("来了来了");
+            break;
+        default:
+            console.log("默认的在控制台输出");
+    }
+</script>
+</body>
+</html>

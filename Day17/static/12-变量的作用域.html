@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>12-变量的作用域</title>
+    <!--
+        JS中的变量的作用域
+          1. 全局：整个页面的范围都生效
+          2. 代码块: 如果用var 关键字声明，那么和全局变量的作用域是一样的，
+                    为了更加严谨，ES6中提出了let关键字声明
+          3. 函数（方法）: 只在函数体内生效。但是当不写声明关键字var 或者let 的时候，
+                          js会将此变量提升为全局变量，我们为了避免这种情况，一定要
+                          写声明关键字
+    -->
+</head>
+<body>
+
+<script>
+    // var a = 10;
+    // console.log(a);
+    // {
+         //只有在代码块中生效
+    //     let b = 100;
+    //     console.log(b);
+    // }
+    // console.log(b);
+    function text() {
+        //var和let都是只在函数体中起作用
+        let c = 1;
+        console.log(c);
+    }
+    text();
+    console.log(c);
+</script>
+<script>
+    // console.log(a);
+    // console.log(b);
+    console.log(c);
+</script>
+</body>
+</html>

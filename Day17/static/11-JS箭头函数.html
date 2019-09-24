@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="zh">
+<head>
+  <meta charset="UTF-8">
+  <title>11-JS箭头函数</title>
+</head>
+<body>
+
+<!--
+箭头函数 不需要关键字 function 声明,而是使用 箭头 => 来表示函数结构
+    1. 普通函数 格式 function 函数名(参数){return}
+    2. 匿名函数 格式 function(参数){return}
+    3. 箭头函数 格式 (参数)=>{return}
+
+-->
+
+<script type="text/javascript">
+  //箭头函数
+  let sum = (a, b) =>{
+    return a + b;
+  };
+  //更简单的写法 即当函数体只有一行代码时可以省略{}和return
+  let sumA = (a , b) => a+b;
+
+</script>
+</body>
+</html>
