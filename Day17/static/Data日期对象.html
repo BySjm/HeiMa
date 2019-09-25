@@ -6,5 +6,28 @@
 </head>
 <body>
 
+
+
+<script>
+    let date = new Date();
+    console.log("年" + date.getFullYear());
+    console.log("月" + (date.getMonth() + 1));
+    console.log("日" + date.getDate());
+    console.log(date.getTime());
+    console.log("=================================");
+    let str1 = "123456";
+    let number1 = parseInt(str1);
+    console.log(typeof number1);
+    console.log("=================================");
+    let str2 = "12345.1234";
+    let number2 = parseFloat(str2);
+    console.log(str2);
+    console.log("=================================");
+    let str3 = "java让我快乐！";
+    let encodeURI1 = encodeURI(str3);
+    console.log(encodeURI1);
+    let decodeURI2 = decodeURI(encodeURI1);
+    console.log(decodeURI2);
+</script>
 </body>
 </html>
