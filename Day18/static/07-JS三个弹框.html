@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="zh">
+<head>
+    <meta charset="UTF-8">
+    <title>07-JS三个弹框</title>
+</head>
+<body>
+<!--
+JS三个弹框
+    查询手册完成
+    1. 警告用户网站内容可能不安全
+
+    2. 让用户确认是否删除所有数据
+
+    3. 提示用户输入银行卡密码
+
+
+
+-->
+
+<script >
+
+    // 1. 警告用户网站内容可能不安全
+    // window.alert("网站内容可能不安全\n然后我换行了");
+    // 2. 让用户确认是否删除所有数据
+    // window.confirm("是否删除所有数据");
+    // 3. 提示用户输入银行卡密码
+    let prompt = window.prompt("请输入银行卡密码。","这个是输入框中的内容");
+    console.log(prompt);
+    console.log(typeof prompt);
+</script>
+</body>
+</html>

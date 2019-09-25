@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="zh">
+<head>
+  <meta charset="UTF-8">
+  <title>02-JSON介绍</title>
+</head>
+<body>
+<!--
+JavaScript的对象有两种表示形式
+
+-->
+<script>
+  //JS对象的两种格式
+  let stu = new Object();
+  stu.id = 1;
+  stu.name = "钱气球";
+  stu.age = 19;
+  console.log(stu);
+  console.log(stu.name);
+  console.log(typeof stu);
+  console.log("===============================");
+  let per = {id:2,name:"上辈子是个气球",age:19};
+  console.log(per);
+  // JS对象取属性值有两种方式:
+  console.log(per.name);
+  console.log(per["id"]);
+  console.log("===============================");
+  let cat = new Array();
+  cat["id"] = 3;
+  cat["name"] = "氢气球";
+  cat["age"] = 19;
+  console.log(cat); //数组是[],JS对象是{}
+</script>
+</body>
+</html>

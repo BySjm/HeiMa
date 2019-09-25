@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="zh">
+<head>
+    <meta charset="UTF-8">
+    <title>04-JSON格式练习</title>
+</head>
+<body>
+<!--
+JSON 语法规则
+
+-->
+<script>
+    //1. 对象类型,普通对象类型 {key:value,key:value}
+    let obj1 = {id: 1, name: "气球", age: 19};
+    console.log(obj1);
+    //2. 数组/集合类型,数组元素是对象 [{key:value,key:value},{key:value,key:value}]
+    let arr1 = [{id: 1, name: "气球", age: 19}, {id: 2, name: "宝宝", age: 19}];
+    //3. 对象值是数组,数组元素是对象
+    let school = {
+        sname: "黑马程序员",
+        clazz: [{cname: 116, stus: [{id: 1, name: "气球", age: 19}, {id: 2, name: "宝宝", age: 19}]},
+            {cname: 115, stus: [{id: 1, name: "气球", age: 19}, {id: 2, name: "宝宝", age: 19}]}]
+    }
+    console.log(school);
+</script>
+</body>
+</html>
