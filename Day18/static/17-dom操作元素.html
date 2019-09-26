@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="zh">
+<head>
+    <meta charset="UTF-8">
+    <title>17-dom操作元素</title>
+</head>
+<body>
+<!--
+dom操作元素
+    1. 后面添加喝酒(掌握)
+        innerHTML()
+    2. 后面添加烫头(了解)
+        document.createElement(标签名称)
+        parentNode.appendChild(newNode)
+    3.移除元素(了解)
+        outerHTML()
+
+-->
+
+<div id="container">
+    <input id="smoke" type="checkbox" name="hobby" value="抽烟">
+    <label for="smoke">抽烟&emsp;</label>
+
+
+</div>
+
+<p>我要自杀了</p>
+
+<script >
+
+    //1. 后面添加喝酒(掌握) innerHTML()
+    let element = document.querySelector("#container");
+    element.innerHTML += "<input id=\"drink\" type=\"checkbox\" name=\"hobby\" value=\"喝酒\">\n" +
+        "    <label for=\"drink\">喝酒</label>";
+    //2. 后面添加烫头(了解)
+
+
+
+    //3.移除元素(了解) outerHTML()
+    let p = document.querySelector("p");
+    console.log(p);
+    p.outerHTML = "";
+</script>
+</body>
+</html>
