@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="zh">
+<head>
+    <meta charset="UTF-8">
+    <title>11-web存储</title>
+</head>
+<body>
+<!--
+HTML5为JS增加了两个可以存储数据的对象
+    1. localStorage
+    2. sessionStorage
+
+
+不管是 localStorage，还是 sessionStorage，可使用的API都相同，
+常用的有如下几个（以localStorage为例）：
+    保存数据：
+    读取数据：
+    删除单个数据：
+    删除所有数据：
+
+
+
+
+localStorage与 sesstionStorage二者区别:
+
+
+
+
+-->
+
+
+<button id="btn1" onclick="btn1()">存储11</button>
+<button id="btn2" onclick="btn2()">存储22</button>
+<button id="btn3" onclick="btn3()">查看存储页面</button>
+
+
+
+<script type="text/javascript">
+
+  localStorage.setItem("username", "123456");
+  localStorage.setItem("password", "456789");
+  localStorage.clear();
+  console.log(localStorage.getItem("username"));
+  console.log(localStorage.getItem("password"));
+
+  function btn1() {
+        localStorage.setItem("local", "1111");
+        sessionStorage.setItem("session", "1111");
+    }
+    function btn2() {
+      localStorage.setItem("local", "2222");
+      sessionStorage.setItem("session", "2222");
+    }
+    function btn3() {
+        location.href = "11-web存储get.html";
+    }
+</script>
+</body>
+</html>
