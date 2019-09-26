@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="zh">
+<head>
+    <meta charset="UTF-8">
+    <title>09-location地址</title>
+</head>
+<body>
+
+<button onclick="f1()">获取当前浏览器地址</button>
+<button onclick="f2()">刷新当前页面</button>
+<button onclick="f3()">跳转页面(必用)</button>
+
+<script>
+    // 1. 获取当前浏览器地址
+    function f1() {
+        console.log(location.href);
+    }
+    // 2. 刷新当前页面
+    function f2() {
+        location.reload();
+    }
+    // 3. 跳转页面(必用)
+    function f3() {
+        location.href = "08-JS两个定时器.html";
+    }
+</script>
+</body>
+</html>
