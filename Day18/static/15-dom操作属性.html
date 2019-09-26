@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="zh">
+<head>
+    <meta charset="UTF-8">
+    <title>15-dom操作属性</title>
+</head>
+<body>
+<form action="#" method="get">
+    姓名 <input type="text" name="userName" value="张三" /> <br/>
+    密码 <input type="password" name="userPass" > <br/>
+    生日 <input type="date" name="userBirth"><br/>
+    性别 <input type="radio" name="gender" value="男" checked="checked">男&emsp;<input type="radio" name="gender" value="女"/>女<br/>
+    爱好 <input type="checkbox" name="hobby" value="smoke"  checked="checked">抽烟<input type="checkbox" name="hobby" value="drink" checked>喝酒<input type="checkbox" name="hobby" value="perm">烫头<br/>
+    头像 <input type="file" name="userPic"><br/>
+    学历
+    <select name="userEdu" >
+        <option value="0">请选择</option>
+        <option value="1">入门</option>
+        <option value="2">精通</option>
+        <option value="3">放弃</option>
+
+    </select><br/>
+    简介
+    <textarea name="userIntro"  cols="30" rows="10">默认值</textarea><br/>
+    <input type="reset" value="清空按钮"/>
+    <input type="submit" value="提交按钮"/><br/>
+    <input type="button" value="普通按钮">
+    <button>专业按钮</button><button>&times;</button>
+
+
+</form>
+<script >
+    // 1. 获取文本框的值,单选框或复选框的选中状态
+    let userName = document.querySelector("input[name='userName']");
+    console.log(userName.value);
+    userName.value = "伊泽";
+    console.log("==============================================");
+    let radios = document.querySelectorAll("input[name = 'gender']");
+    for (let r of radios){
+        console.log(r);
+        console.log(r.checked);
+    }
+    console.log("==============================================");
+    let hobbies = document.querySelectorAll("input[name = 'hobby']");
+    for (let h of hobbies){
+        console.log(h);
+        console.log(h.checked);
+    }
+    // 2. 给元素设置自定义属性
+    userName.setAttribute("data-msg", "自定义属性");
+    // 3. 获取元素的自定义属性值
+    console.log(userName.getAttribute("data-msg"));
+    console.log(userName.getAttribute("type"));
+
+    for (let hh of hobbies){
+        console.log(hh);
+        console.log(hh.getAttribute("checked"));
+    }
+    // 4. 移除元素的自定义属性
+    userName.removeAttribute("data-msg");
+    console.log(userName.getAttribute("data-msg"));
+</script>
+</body>
+</html>
