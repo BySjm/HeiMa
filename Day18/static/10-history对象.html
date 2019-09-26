@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="zh">
+<head>
+    <meta charset="UTF-8">
+    <title>10-history对象</title>
+</head>
+<body>
+<button onclick="myback()">页面后退</button>
+<button onclick="forward()">页面前进</button>
+<button onclick="go()">页面刷新</button>
+<script >
+    // 1. 页面后退
+    function myback() {
+        history.back();
+    }
+    // 2. 页面前进
+    function forward() {
+        history.forward();
+    }
+    // 3. 页面刷新
+    function go() {
+        history.go(0);
+    }
+</script>
+</body>
+</html>
