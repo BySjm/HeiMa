@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="zh">
+<head>
+    <meta charset="UTF-8">
+    <title>13-dom获取元素</title>
+</head>
+<body>
+<!--
+dom获取元素
+    第一种(掌握):es6提供了强大的根据CSS选择器获取元素的接口
+        document.querySelector(CSS选择器)
+        document.querySelectorAll(CSS选择器)
+    根据第一种语法,完成如下功能:
+    1.根据Id选择器获取一个元素
+    2.根据类选择器获取一个(多个)元素
+    3.根据标签选择器获取一个(多个)元素
+    4.根据name属性选择器获取一个(多个)元素
+    5.根据关系选择器获取一个(多个)元素
+
+    第二种(了解):es5之前也有获取元素的接口
+        1. 根据id获取一个元素 getElementById(ID) ===
+        2. 根据class获取多个元素 getElementsByClassName(class) ===
+        3. 根据标签名称获取多个元素 getElementsByTagName(标签) ===
+        4. 根据name属性获取多个元素 getElementsByName('name值') ===
+
+小总结:
+    es6接口获取元素功能非常强大,而且接口非常易用.
+    es5接口功能非常局限,而且接口使用复杂.
+
+
+-->
+<form action="#" method="get">
+    姓名 <input type="text" name="userName" id="userName" value="邱少云"/> <br/>
+    密码 <input type="password" name="userPass"> <br/>
+    生日 <input type="date" name="userBirth"><br/>
+    性别
+    <input type="radio" name="gender" value="male" class="radio">男&emsp;
+    <input type="radio" name="gender" value="female" class="radio"/>女<br/>
+
+    爱好
+    <input type="checkbox" name="hobby" value="smoke">抽烟
+    <input type="checkbox" name="hobby" value="drink">喝酒
+    <input type="checkbox" name="hobby" value="perm">烫头<br/>
+
+    头像 <input type="file" name="userPic"><br/>
+    学历
+    <select name="userEdu">
+        <option value="0">请选择</option>
+        <option value="1">入门</option>
+        <option value="2">精通</option>
+        <option value="3">放弃</option>
+    </select><br/>
+    简介
+    <textarea name="userIntro" cols="30" rows="10">默认值</textarea><br/>
+    <input type="reset" value="清空按钮"/>
+    <input type="submit" value="提交按钮"/><br/>
+    <input type="button" value="普通按钮">
+    <button>专业按钮</button>
+    <button>&times;</button>
+
+</form>
+
+<script>
+    // 1.根据Id选择器获取一个元素
+    let username = document.querySelector("#userName");
+    console.log(username.value);
+    // 2.根据类选择器获取一个(多个)元素
+    let radios = document.querySelectorAll(".radio");
+    for (let r of radios){
+        console.log(r);
+    }
+    // 3.根据标签选择器获取一个(多个)元素
+    let options = document.querySelectorAll("option");
+    for (let o of options){
+        console.log(o.value);
+    }
+    // 4.根据name属性选择器获取一个(多个)元素
+    let userPic = document.querySelector("input[name='userPic']");
+    console.log(userPic);
+    // 5.根据关系选择器获取一个(多个)元素
+    let buttons = document.querySelectorAll('form button');
+    for (let b of buttons){
+        console.log(b);
+    }
+
+    //第二种(了解):es5之前也有获取元素的接口
+    //------------ 华丽丽的分割线 --------
+    // 1. 根据id获取一个元素
+    // 2. 根据class获取多个元素
+    // 3. 根据标签名称获取多个元素
+    // 4. 根据name属性获取多个元素
+
+
+</script>
+
+</body>
+</html>
