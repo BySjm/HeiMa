@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="zh">
+<head>
+    <meta charset="UTF-8">
+    <title>16-dom操作样式</title>
+</head>
+<body>
+
+<style>
+    #p1 {
+        background-color: red;
+    }
+
+    .mp {
+        color: green
+    }
+
+    .mpp {
+        background-color: lightgray;
+    }
+</style>
+<p id="p1">1. 设置一个css样式</p>
+<p id="p2">2. 批量设置css样式</p>
+<p id="p3" class="mpp">3. 通过class设置样式</p>
+<p id="p4">4. 切换class样式</p>
+
+<script>
+
+    // 1. 设置一个css样式
+    let elementP1 = document.querySelector("#p1");
+    elementP1.style.background = "green";
+    // 2. 批量设置css样式
+    let elementP2 = document.querySelector("#p2");
+    elementP2.style.cssText = "background:yellow;font-family:'宋体'; "
+    // 3. 通过class设置样式
+    let elementP3 = document.querySelector("#p3");
+    elementP3.className += " mp";
+    // 4. 切换class样式
+    let elementP4 = document.querySelector("#p4");
+    let classList = elementP4.classList;
+    console.log(classList.contains("mp"));
+    //classList.add("mp");
+    //classList.remove("mp");
+    classList.toggle("mp"); //toggle() 有则删除，无则添加
+</script>
+</body>
+</html>
