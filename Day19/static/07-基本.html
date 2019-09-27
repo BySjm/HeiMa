@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="zh">
+<head>
+  <meta charset="UTF-8">
+  <title>07-基本</title>
+  <!--引入Jquery库文件-->
+  <script src="../js/jquery-1.11.3.js"></script>
+</head>
+<body>
+<!--
+CSS基本选择器:
+    1.标签 根据标签匹配元素 格式 标签
+    2.类 根据class的值匹配元素 class属性是给标签归类添加样式 格式 .class
+    3.ID 根据id值匹配元素 id属性是标签的唯一标志 #id
+
+    通配符(了解) *  格式 *
+
+-->
+<style>
+  span{/*匹配所有span标签*/
+    font-family: "楷体";/*字体类型*/
+  }
+  .female{/*匹配class值是female的标签*/
+    color:red;/*红色*/
+  }
+  .hero{
+    font-size:30px;/*字体大小30px*/
+  }
+  #main{/*匹配id值是main的元素*/
+    font-size:100px;/*字体大小100px*/
+  }
+  *{
+    border:1px solid gray;/*边框 1px 实线 灰色*/
+  }
+</style>
+
+<span class="female">古力娜扎</span>
+<span class="female">迪丽热巴</span>
+<span class="female">新垣结衣</span>
+<span class="female">岛琦结衣</span>
+
+<span class="female hero">郭俊卿</span>
+<span class="male hero">杨思根</span>
+<span class="male hero">黄继光</span>
+<span class="hero">郑成功</span>
+
+<span id="main">主城</span>
+<span id="east">东港</span>
+<script>
+  //标签选择器
+  console.log($('span').text());
+  //类选择器
+  console.log($('.hero').text());
+  //ID选择器
+  console.log($('#main').text());
+  //(了解)通配符选择器
+  let $all = $('*');
+  let all = $all.toArray();
+  let k = 1;
+  for (let a of all){
+    console.log(`============${k++}=============`);
+    console.log(a);
+  }
+</script>
+</body>
+</html>
