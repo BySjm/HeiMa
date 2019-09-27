@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="zh">
+<head>
+  <meta charset="UTF-8">
+  <title>05-jquery基础语法</title>
+</head>
+<body>
+<!--
+jQuery 语法是通过选取 HTML 元素，并对选取的元素执行某些操作。
+    基础语法： $(selector).action()
+    $:
+    selector:
+    action:
+
+    例如 页面加载完成时调用方法执行
+
+-->
+
+
+<!--引入Jquery库文件-->
+<script src="../js/jquery-1.11.3.js"></script>
+<script>
+
+  //页面加载完成时调用的方法
+  function myf() {
+    console.log("页面加载完成");
+  }
+  //Jquery标准语法
+  $(document).ready(myf);
+  //Jquery简写
+  $(myf());
+  //简写(匿名函数)
+  $(function () {
+    console.log("匿名函数");
+  });
+  //简写(箭头函数)
+  $(() => {console.log("箭头函数")});
+
+</script>
+</body>
+</html>
