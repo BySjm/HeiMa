@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="zh">
+<head>
+  <meta charset="UTF-8">
+  <title>08-关系(层级)</title>
+  <!--引入Jquery库文件-->
+  <script src="../js/jquery-1.11.3.js"></script>
+</head>
+<body>
+<!--
+关系(层级)
+    E,F 并列 特点: 逗号
+    E F 后代 特点: 空格
+    E>F 亲子 特点: >号
+    E+F 下一个弟弟 特点: +号
+-->
+<style type="text/css">
+  span,p,body{
+    font-family: "楷体";
+  }
+  div span{
+    color:green;
+  }
+  div>span{
+    background-color: lightgray;/*背景颜色浅灰色*/
+  }
+  div+span{
+    border:1px solid gray;/*边框 1px 实线 灰色*/
+  }
+
+</style>
+
+<div>
+  <span>烟幕弹</span>
+  <p>
+    <span id="gbl">高爆雷</span>
+  </p>
+  <span>我也是儿子</span>
+</div>
+<span>下一个弟弟</span>
+
+<p class="jjx">急救箱</p>
+<span id="cld">催泪弹</span>
+
+<script >
+  // E,F 并列 特点: 逗号
+  console.log($('div,span').text());
+  // E F 后代 特点: 空格
+  console.log($('div span').text());
+  // E>F 亲儿子,直系孩子 特点: >号
+  console.log($('div>span').text());
+  // E+F 下一个弟弟 特点: +号
+  console.log($('div+span').text());//所有div紧邻的下一个span的纯文本内容
+</script>
+
+
+</body>
+</html>
