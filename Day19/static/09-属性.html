@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="zh">
+<head>
+  <meta charset="UTF-8">
+  <title>09-属性</title>
+  <!--引入Jquery库文件-->
+  <script src="../js/jquery-1.11.3.js"></script>
+</head>
+<body>
+<!--
+属性选择器
+    E[attribute=value]
+-->
+<style>
+  label[for]{
+    border:1px solid red;/*边框 1px 实线 红色*/
+    border-radius:5px;/*边框圆角 5px*/
+  }
+  input[type="text"]{
+    background-color: gold;/*背景颜色金色*/
+  }
+  input[type="password"][name="userPass"]{
+    border:1px solid green;/*边框 1px 实线 绿色*/
+    border-radius:10px;/*边框圆角 5px*/
+  }
+</style>
+
+<label for="userName">姓名</label>
+<input id="userName" type="text" name="userName" value="超级管理员"/><br/>
+<label>密码</label>
+<input type="password" name="userPass" value="123456"/><br/>
+
+<script>
+
+  //获取有for属性的label标签
+  console.log($('label[for]').text());
+  //获取type='text'的input标签
+  console.log($('input[type="text"]')[0].value);
+  console.log($('input[type="text"]').val()); //jQuery写法
+  //获取type="password"且name="userPass"的input标签
+  console.log($('input[type="password"]input[name="userPass"]').val());
+
+</script>
+
+</body>
+</html>
