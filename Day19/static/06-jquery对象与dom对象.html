@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="zh">
+<head>
+  <meta charset="UTF-8">
+  <title>06-jquery对象与dom对象</title>
+  <!--引入Jquery库文件-->
+  <script src="../js/jquery-1.11.3.js"></script>
+</head>
+<body>
+<!--
+jquery对象与dom对象定义
+    dom对象:
+    jquery对象:
+
+使用注意:
+  jquery对象
+  dom对象
+
+jquery对象与dom对象转换:
+    dom对象
+    jquery对象
+-->
+
+<div id="md">演示jquery对象和dom对象的区别<br/></div>
+
+<script>
+  //dom对象
+  let div = document.querySelector("#md");
+  console.log(div.innerHTML);
+  console.log(div.innerText);
+  //jquery对象
+  let $div = $("#md");
+  console.log($div.html());
+  console.log($div.text());
+  //错误用法
+
+  // dom对象可以使用$符构造成为jquery对象
+  // dom对象可以使用$符构造成为jquery对象
+  console.log($(div).html());
+  console.log($(div).text());
+  // jquery对象可以使用取索引的格式转为dom对象 [0]或get(0)
+  console.log($div[0].innerHTML);
+  console.log($div[0].innerText);
+
+</script>
+
+</body>
+</html>
