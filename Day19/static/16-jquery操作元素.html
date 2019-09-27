@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="zh">
+<head>
+  <meta charset="UTF-8">
+  <title>16-jquery操作元素</title>
+  <!--引入Jquery库文件-->
+  <script src="../js/jquery-1.11.3.js"></script>
+</head>
+<body>
+<!--
+jquery操作元素
+    1. $(标签) 创建一个标签对象
+    2. $.prepend() 在内部前面插入
+    3. $.append() 内部后面追加
+    4. $.empty() 把内容清空
+    5. $.remove() 删除自己
+-->
+<form action="#" method="get">
+  学历
+  <select name="userEdu" id="userEdu">
+
+    <option value="1">小学</option>
+    <option value="2">初中</option>
+    <option value="3">高中</option>
+  </select>
+</form>
+<script>
+  let $select = $("#userEdu");//下拉列表对象
+  // 1.前面添加幼稚园选项
+  $select.prepend(`<option value="0">幼稚园</option>`);
+  // 2.后面添加大学选项
+  $select.append(`<option value="4">大学</option>`);
+  // 3.移出所有选项
+  $select.empty();
+  // 4.删除下拉列表
+  $select.remove();
+</script>
+</body>
+</html>
