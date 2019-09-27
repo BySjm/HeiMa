@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="zh">
+<head>
+  <meta charset="UTF-8">
+  <title>13-jquery操作内容</title>
+  <!--引入Jquery库文件-->
+  <script src="../js/jquery-1.11.3.js"></script>
+</head>
+<body>
+<!--
+jquery操作内容
+    1. text() 获取或设置纯文本内容
+    2. html() 获取或设置html内容
+查询jquery手册完成
+    1.获取纯文本内容
+    2.获取html内容
+    3.设置纯文本内容
+    4.设置html内容
+注意:
+    1. text() 是获取设置所有
+    2. html() 是获取第一个,设置所有
+-->
+
+<span>span1</span>
+<span>span2</span>
+<span>span3</span>
+<div>div1<br/></div>
+<div>div2<br/></div>
+<div>div3<br/></div>
+
+<script>
+  let $span = $('span');
+  let $div = $('div');
+  // 1.获取纯文本内容
+  console.log($span.text());
+  // 2.获取html内容
+  console.log($span.html());
+  // 3.设置纯文本内容
+  $span.text("<h1>大保健</h1>")
+  // 4.设置html内容
+  $div.html("<h2>小包间</h2>")
+</script>
+
+</body>
+</html>
