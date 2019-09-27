@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="zh">
+<head>
+  <meta charset="UTF-8">
+  <title>12-对象遍历</title>
+  <!--引入Jquery库文件-->
+  <script src="../js/jquery-1.11.3.js"></script>
+</head>
+<body>
+<!--
+jquery对象的遍历
+    1.$.each() 用法示例
+    2.fori
+    3.forof
+-->
+<ul id="city">
+  <li>北京</li>
+  <li>上海</li>
+  <li>天津</li>
+  <li>重庆</li>
+</ul>
+<script>
+  let $lis = $("li");//获取所有li
+  // 1.$.each() 匿名函数
+  $lis.each(function (i,e) {
+    console.log(`-----${i}-----${e.innerText}--------`);
+  });
+  // 1.$.each() 箭头函数
+  $lis.each((i, e) => {
+    console.log(`-----${i}-----${$(e).text()}--------`);
+  });
+  // 2.for i
+  for (let i = 0; i < $lis.length; i++) {
+    console.log(`-----${i}-----${$lis[i].innerText}----${$($lis[i]).text()}----`);
+  }
+  // 3.for of
+  for (let l of $lis.toArray()){
+    console.log(l.innerText);
+    console.log($(l).text());
+  }
+</script>
+</body>
+</html>
