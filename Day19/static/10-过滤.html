@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="zh">
+<head>
+  <meta charset="UTF-8">
+  <title>10-过滤</title>
+  <!--引入Jquery库文件-->
+  <script src="../js/jquery-1.11.3.js"></script>
+</head>
+<body>
+<!--
+jquery过滤选择器
+    :first
+    :last
+    :even
+    :odd
+    :eq(index)
+    :gt(index)
+    :lt(index)
+    :not(selector)
+
+
+-->
+<table id="tab1" border="1" width="800" align="center">
+  <tr >
+    <th width="100px"><input type="checkbox" >全/<input type="checkbox" >反选</th>
+    <th>分类ID</th>
+    <th>分类名称</th>
+  </tr>
+  <tr>
+    <td><input type="checkbox" class="checkbox"></td>
+    <td>1</td>
+    <td>手机数码</td>
+  </tr>
+  <tr>
+    <td><input type="checkbox" class="checkbox"></td>
+    <td>2</td>
+    <td>电脑办公</td>
+  </tr>
+  <tr>
+    <td><input type="checkbox" class="checkbox"></td>
+    <td>3</td>
+    <td>鞋靴箱包</td>
+  </tr>
+  <tr>
+    <td><input type="checkbox" class="checkbox"></td>
+    <td>4</td>
+    <td>家居饰品</td>
+  </tr>
+  <tr>
+    <td><input type="checkbox" class="checkbox"></td>
+    <td>5</td>
+    <td>牛奶制品</td>
+  </tr>
+  <tr>
+    <td><input type="checkbox" class="checkbox"></td>
+    <td>6</td>
+    <td>大豆制品</td>
+  </tr>
+</table>
+<div style="text-align: center;">
+  <label for="userName">姓名</label>
+  <input id="userName" type="text" name="userName" value="超级管理员"/><br/>
+  <label>密码</label>
+  <input type="password" name="userPass" value="123456"/><br/>
+  <label>生日</label>
+  <input type="text" name="userBirth" value="2019-10-01"/><br/>
+</div>
+<script>
+  // :first 第一个tr的纯文本内容
+  console.log($('tr:first').text());
+  // :last 最后一个tr的纯文本内容
+  console.log($('tr:last').text());
+  // :even 索引偶数 行的纯文本内容
+  console.log($('tr:even').text());
+  // :odd 索引奇数 行的纯文本内容
+  console.log($('tr:odd').text());
+  // :eq(index) 索引等于 3的行的纯文本内容
+  console.log($('tr:eq(3)').text());
+  // :gt(index) 索引大于 4的行 的纯文本内容x
+  console.log($('tr:gt(4)').text());
+  // :lt(index) 索引小于 1的行 的纯文本内容
+  console.log($('tr:lt(1)').text());
+  // :not(selector) 排除  没有for属性的label标签
+  console.log($('label:not([for])').text());
+</script>
+</body>
+</html>
