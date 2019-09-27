@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="zh">
+<head>
+  <meta charset="UTF-8">
+  <title>17-绑定事件</title>
+  <!--引入Jquery库文件-->
+  <script src="../js/jquery-1.11.3.js"></script>
+</head>
+<body>
+<!--
+jquery绑定事件
+    1. $.event(函数)    注意:
+    2. $.on("event",函数)
+    3. $.off("event")
+-->
+<p id="p1">我是段落1</p>
+<p id="p2">我是段落2</p>
+<p id="p3" onclick="offevent()">我是段落3解绑定事件</p>
+<script>
+  //1. $.event(函数) 点击p1时获取其纯文本内容
+  $("#p1").click(function () {
+    console.log($(this).text());
+  });
+  //手动触发一次p1的点击事件
+  //2. $.on("event",函数);  点击p2时获取其纯文本内容
+  $("#p2").on("click",function () {
+    console.log($(this).text());
+  });
+  //3. $.off("event")解绑定事件 解除p1, p2 的单击事件绑定
+  function offevent() {
+    $('#p1').off("click");
+    $('#p2').off("click");
+  }
+</script>
+</body>
+</html>
