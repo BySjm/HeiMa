@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="zh">
+<head>
+  <meta charset="UTF-8">
+  <title>23- jQuery的ajax示例</title>
+  <!--引入Jquery库文件-->
+  <script src="../js/jquery-1.11.3.js"></script>
+</head>
+<body>
+<!--
+jQuery的ajax示例
+    1. 点击图片请求服务器(用本地json文件模拟服务器),并把接受到的数据显示在页面
+ -->
+
+<img src="../img/timg.gif" onclick="doAjax()">
+<p id="describe">这一群人正在军训</p>
+
+<script type="text/javascript">
+
+  let res = null;//服务器返回的数据
+  //1. 点击图片请求服务器(用本地json文件模拟服务器),并把接受到的数据显示在页面
+  function doAjax() {
+    $.ajax({
+      type:'get',
+      url:'../data/desc.txt',
+      success:(response)=>{
+        $('#describe').text(response);
+      },
+      error:(error)=>{
+        console.log(error);
+      }
+    });
+  }
+
+</script>
+</body>
+</html>
