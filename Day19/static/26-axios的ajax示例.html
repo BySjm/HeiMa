@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="zh">
+<head>
+  <meta charset="UTF-8">
+  <title>26-axios的ajax示例</title>
+  <!--引入axios库文件-->
+  <script src="../js/axios.min.js"></script>
+</head>
+<body>
+<!--
+axios的ajax示例
+    1. 点击图片请求服务器(用本地json文件模拟服务器),并把接受到的数据显示在页面
+ -->
+
+<img src="../img/timg.gif" onclick="doAjax()">
+<p id="describe">这一群人正在军训</p>
+
+<script type="text/javascript">
+  //1. 点击图片请求服务器(用本地json文件模拟服务器),并把接受到的数据显示在页面
+  function doAjax() {
+    let res = null;//服务器返回的数据
+
+    axios({
+      method:'get',
+      url:'../data/student.json'
+    }).then((response) =>{
+      // console.log(response);
+      res = response.data.desc;
+      document.querySelector("#describe").innerHTML = res;
+    }).catch((error) =>{
+      console.log(error);
+    });
+  }
+</script>
+</body>
+</html>
