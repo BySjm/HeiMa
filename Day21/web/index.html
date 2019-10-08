@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<h2>request对象的作用演示（api）</h2>
+<h2>1--请求行数据的获取</h2>
+get提交：
+<form method="get" action="/Day21/sd1">
+    <input type="submit" value="提交">
+</form>
+<br>
+post提交：
+<form method="post" action="/Day21/sd1">
+    <input type="submit" value="提交">
+</form>
+<h2>2--请求头数据的获取</h2>
+<a href="/Day21/sd2">请求头的数据获取演示</a>
+<a href="/Day21/sd3">(下载我和我的祖国)----防盗链</a>
+<a href="/Day21/sd4">获取用户浏览器信息---下载</a>
+<br/>
+<h2>3--请求参数数据的获取（很重要）</h2>
+get提交： 自动拼装数据
+<form method="get" action="/Day21/sd5">
+    用户名：<input type="text" name="username"/>
+    密码：<input type="password" name="password"/>
+    爱好：
+    <input type="checkbox" name="hobby" value="cy">抽烟
+    <input type="checkbox" name="hobby" value="hj">喝酒
+    <input type="checkbox" name="hobby" value="tt">烫头
+    <input type="submit" value="提交">
+</form>
+手动拼装数据
+<a href="/Day21/sd5?username=jack&password=123&sex=nan">sd5</a>
+<br/>
+post提交：
+<form method="post" action="/Day21/sd5">
+    用户名：<input type="text" name="username"/>
+    <input type="submit" value="提交">
+</form>
+中文数据提交<br>
+get方式已经解决
+<form method="get" action="/Day21/sd6">
+    用户名：<input type="text" name="username"/>
+    <input type="submit" value="提交">
+</form>
+<br/>
+post方式有中文乱码
+<form method="post" action="/Day21/sd6">
+    用户名：<input type="text" name="username"/>
+    <input type="submit" value="提交">
+</form>
+<h2>4--作为容器传递数据（很重要）</h2>
+<a href="/Day21/sd7">存</a> 作业：跳转4层
+<a href="/Day21/sd8">取</a>
+<h2>5--beanUtils工具的使用（将map的数据封装给对象(javabean)）</h2>
+<form action="/Day21/sd9" method="post">
+    用户名：<input type="text" name="username"/>
+    密码：<input type="password" name="password"/>
+    <input type="submit" value="提交">
+</form>
+<hr/>
+<h2>response对象的作用演示（api）</h2>
+
+<h2>1--给浏览器写响应行数据</h2>
+关注的点：不是给浏览器写状态码 而是清楚的知道每一个状态码的含义
+
+<h2>2--给浏览器写响应头数据</h2>
+<a href="/Day21/sd10">解决响应中文数据的乱码</a>
+<a href="/Day21/sd11">重定向</a>
+<a href="/Day21/sd13">定时刷新</a>
+<h2>3--给浏览器写响应体数据</h2>
+<a href="/Day21/sd14">响应数据给浏览器展示（字符流&字节流）</a>
+<h2>下载</h2>
+<a href="/Day21/download.html">下载资源列表</a>
+<h2>点击切换验证码</h2>
+<img id="imgs" src="/Day21/code" width="200px" height="100px" onclick="changeImg()"/>
+<script>
+    function changeImg() {
+        var elementById = document.getElementById("imgs");
+        elementById.src = "/Day21/code?time=" + new Date();
+    }
+</script>
+</body>
+</html>
