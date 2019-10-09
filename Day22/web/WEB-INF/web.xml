@@ -13,4 +13,12 @@
         <servlet-name>LastTimeServlet</servlet-name>
         <url-pattern>/last</url-pattern>
     </servlet-mapping>
+    <servlet>
+        <servlet-name>BookServlet</servlet-name>
+        <servlet-class>cn.bysjm.cookie.BookServlet</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>BookServlet</servlet-name>
+        <url-pattern>/book</url-pattern>
+    </servlet-mapping>
 </web-app>
