@@ -11,6 +11,7 @@ import javax.servlet.http.HttpServletResponse;
 import java.io.File;
 import java.io.FileInputStream;
 import java.io.IOException;
+import java.io.InputStream;
 import java.net.ServerSocket;
 import java.net.URLEncoder;
 import java.util.Base64;
@@ -19,9 +20,11 @@ public class DownLoadServlet extends HttpServlet {
     protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
         String fileName = request.getParameter("fileName");
         ServletContext servletContext = getServletContext();
-        String path = servletContext.getRealPath("download/" + fileName);
-        File file = new File(path);
-        FileInputStream is = new FileInputStream(file);
+//        String path = servletContext.getRealPath("download/" + fileName);
+//        File file = new File(path);
+//        FileInputStream is = new FileInputStream(file);
+        //以上三行代码可以缩写为这一句
+        InputStream is = servletContext.getResourceAsStream("download/" + fileName);
         ServletOutputStream os = response.getOutputStream();
         String value = request.getHeader("user-agent");
         String encode = null;
