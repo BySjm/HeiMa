@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="zh">
+<head>
+  <meta charset="UTF-8">
+  <title>27-搜索候选案例</title>
+  <!--引入Jquery库文件-->
+  <script src="../js/jquery-1.11.3.js"></script>
+  <style type="text/css">
+    .content {
+      width: 643px;
+      margin: 200px auto;
+      text-align: center;
+    }
+
+    input[type='text'] {
+      width: 534px;
+      height: 40px;
+      font-size: 14px;
+    }
+
+    input[type='button'] {
+      width: 100px;
+      height: 46px;
+      background: #38f;
+      border: 0;
+      color: #fff;
+      font-size: 15px
+    }
+
+    .show {
+      position: absolute;
+      width: 516px;
+      border: 1px solid #efefef;
+      border-top: 0;
+      display: none;
+      text-align: left;
+      color: darkgray;
+      line-height: 20px;
+      padding: 5px 10px;
+    }
+  </style>
+  <script type="text/javascript">
+    //当键盘按键弹起时调用
+    function searchWord(obj) {
+
+      let reg = new RegExp("^" + obj.value)
+
+      let $show = $('#show');
+      $show.empty();
+
+      $.ajax({
+        type:'get',
+        url:'../data/data.json',
+        success:function (response) {
+          // console.log(response);
+          for (let r of response){
+
+            if (reg.test(r)){
+              $show.append('<div>' + r + '</div>');
+            }
+            $show.css("display", "block");
+            console.log(obj.value.length);
+            if (obj.value.length === 0){
+              $show.css("display", "none");
+            }
+          }
+        },
+        error:function (error) {
+          console.log(error)
+        }
+      });
+    }
+  </script>
+</head>
+<body>
+<div class="content">
+
+  <input type="text" name="word" onkeyup="searchWord(this)">
+  <input type="button" value="搜索一下">
+  <div class="show" id="show"></div>
+</div>
+</body>
+</html>

@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="zh">
+<head>
+  <meta charset="UTF-8">
+  <title>23-jquery的Ajax语法</title>
+</head>
+<body>
+<!--
+jquery ajax语法:
+    $.ajax(配置);
+    配置是个JSON对象 常用属性有
+      type
+      url
+      data
+      dataType
+      async
+      success
+      error
+
+使用示例:
+
+
+简写形式(了解):
+语法: $.get(url,data,success); 使用示例:
+$.get("test.php", { name: "张三", pass: "123" },
+  function(response){
+    console.log(response);
+  });
+语法: $.post(url,data,success); 使用示例:
+$.post("test.php", { name: "张三", pass: "123" },
+   function(response){
+     console.log(response);
+   });
+
+ -->
+</body>
+</html>

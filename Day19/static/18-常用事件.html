@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="zh">
+<head>
+  <meta charset="UTF-8">
+  <title>18-常用事件</title>
+  <!--引入Jquery库文件-->
+  <script src="../js/jquery-1.11.3.js"></script>
+  <style>
+    #city{
+      list-style: none;/*列表项目图标类型:不显示图标*/
+      line-height: 30px;/*字体行高30px*/
+    }
+  </style>
+</head>
+<body>
+<!--
+jquery常用事件
+    jquery事件基本与dom事件一样,并且在dom事件基础上做了优化
+
+查询jquery手册完成
+    1. ready
+    2. blur
+    3. change
+    2. mouseover mouseout hover
+    5. click
+
+注意:前面没有dom事件的on
+-->
+<h1 id="h1">我是大标题</h1>
+姓名<input type="text" name="userName"  id="userName" /><br/>
+学历
+<select name="userEdu" id="userEdu">
+  <option value="1">小学</option>
+  <option value="2">初中</option>
+  <option value="3">高中</option>
+</select>
+<ul id="city">
+  <li>北京</li>
+  <li>上海</li>
+  <li>天津</li>
+  <li>重庆</li>
+</ul>
+<button id="btn">点击按钮</button>
+<script>
+  // 1. ready 页面加载完成,修改标题内容
+  // 2. blur 文本框失去焦点时获取其value值
+  // 3. change 表单控件value值改变时, 获取下拉列表选中的值
+  // 2. mouseover mouseout hover 无序列表 鼠标移入移出改变背景颜色
+  //移入移出分开写法
+  //移入移出二合一写法
+  // 5. click 鼠标单击按钮时 把文本框的值赋值给下拉列表
+
+</script>
+</body>
+</html>
