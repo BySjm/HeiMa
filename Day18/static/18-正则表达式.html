@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="zh">
+<head>
+    <meta charset="UTF-8">
+    <title>正则表达式</title>
+</head>
+<body>
+<!--
+正则表达式
+    1. 理解正则表达式语法
+        语法:
+        1. /pattern/attributes (推荐使用)
+        2. new RegExp(pattern, attributes); (不推荐)正则表达式中的特殊符号需要转义
+        pattern 正则表达式
+        attributes 正则表达式修饰符
+                    i 不区分大小写 ,匹配字符串时不区分大小写
+                    g 全局匹配 ,匹配到一个之后不停止,匹配字符串的所有内容
+                    m 多行匹配 ,匹配字符串的所有行的内容
+        常用正则表达式对象的方法
+            test() 语法 RegExpObject.test(string)
+            如果字符串 string 中含有与 RegExpObject 匹配的文本，则返回 true，否则返回 false。
+    2. 会使用如下正则表达式匹配字符串
+
+验证邮编
+/\d{6}/
+校验是否全由8位数字组成
+/^[0-9]{8}$/
+中文名称
+/^[\u4E00-\u9FA5]{2,4}$/
+是否带有小数
+/^\d+\.\d+$/
+验证身份证号
+/\d{17}[\d|X]|\d{15}/
+校验电话码格式
+/^((0\d{2,3}-\d{7,8})|(1[3584]\d{9}))$/
+验证网址
+/http(s)?:[//]{2}([\w-]+\.)+[\w-]+([/]{1}[\w- ./?%&=]*)?/
+验证EMail
+/\w+([-+.']\w+)*@\w+([-.]\w+)*\.\w+([-.]\w+)*/
+-->
+<script >
+
+
+    //^以--开头  $以--结尾
+
+    //1. 理解正则表达式语法
+    let reg1 = new RegExp("\\d{6}");
+    console.log(reg1.test("123456"));
+
+    let reg2 = /\d{3}/;
+    console.log(reg2.test("123"));
+
+    //正则表达式修饰符(了解)
+    let regi = /[amn]/i;//匹配amn
+    let resi = "abc".match(regi);//从"ABC"中匹配regi模式字符串
+    console.log(resi);
+    let regg = /\d/;//查找数字
+    let resg = "1 plus 2 equals 3".match(regg);
+    console.log(resg);
+    let regm = /^\d/;//匹配开头的数字
+    let resm = "abc1 plus 2 equals 3\n6abcmnk".match(regm);
+    console.log(resm);
+
+
+    //2. 会使用如下正则表达式匹配字符串
+
+
+
+</script>
+</body>
+</html>
