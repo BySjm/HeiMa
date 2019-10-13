@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<web-app xmlns="http://xmlns.jcp.org/xml/ns/javaee"
+         xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="http://xmlns.jcp.org/xml/ns/javaee http://xmlns.jcp.org/xml/ns/javaee/web-app_3_1.xsd"
+         version="3.1">
+<!--    <filter>-->
+<!--        <filter-name>IllegalFilter</filter-name>-->
+<!--        <filter-class>cn.bysjm.illegal.IllegalFilter</filter-class>-->
+<!--    </filter>-->
+<!--    <filter-mapping>-->
+<!--        <filter-name>IllegalFilter</filter-name>-->
+<!--        <url-pattern>/illegalServlet</url-pattern>-->
+<!--    </filter-mapping>-->
+
+    <filter>
+        <filter-name>IllegalFilter2</filter-name>
+        <filter-class>cn.bysjm.illegal.IllegalFilter2</filter-class>
+    </filter>
+    <filter-mapping>
+        <filter-name>IllegalFilter2</filter-name>
+        <url-pattern>/illegalServlet</url-pattern>
+    </filter-mapping>
+
+    <filter>
+        <filter-name>EncodingFilter</filter-name>
+        <filter-class>cn.bysjm.illegal.EncodingFilter</filter-class>
+        <init-param>
+            <param-name>encoding</param-name>
+            <param-value>UTF-8</param-value>
+        </init-param>
+    </filter>
+    <filter-mapping>
+        <filter-name>EncodingFilter</filter-name>
+        <url-pattern>/*</url-pattern>
+    </filter-mapping>
+
+    <servlet>
+        <servlet-name>IncludeServlet</servlet-name>
+        <servlet-class>cn.bysjm.filter.IncludeServlet</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>IncludeServlet</servlet-name>
+        <url-pattern>/include</url-pattern>
+    </servlet-mapping>
+</web-app>
