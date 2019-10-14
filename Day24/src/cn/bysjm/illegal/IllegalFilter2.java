@@ -9,6 +9,7 @@ import java.io.InputStreamReader;
 import java.util.ArrayList;
 import java.util.List;
 
+@SuppressWarnings("all")
 public class IllegalFilter2 implements Filter {
 
     //保存非法字符
