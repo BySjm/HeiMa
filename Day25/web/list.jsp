@@ -57,8 +57,8 @@
                 <td>${list.address}</td>
                 <td>${list.qq}</td>
                 <td>${list.email}</td>
-                <td><a class="btn btn-default btn-sm" href="${pageContext.request.contextPath}/findByIdServlet?id=${list.id}">修改</a>&nbsp;
-                    <a class="btn btn-default btn-sm" href="${pageContext.request.contextPath}/deleteServlet?id=${list.id}">删除</a></td>
+                <td><a class="btn btn-default btn-sm" href="${pageContext.request.contextPath}/contactServlet?action=findById&id=${list.id}">修改</a>&nbsp;
+                    <a class="btn btn-default btn-sm" href="${pageContext.request.contextPath}/contactServlet?action=delete&id=${list.id}">删除</a></td>
             </tr>
         </c:forEach>
 

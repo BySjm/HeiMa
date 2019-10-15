@@ -18,7 +18,7 @@
   <body>
   <div align="center">
   	<a
-	  href="${pageContext.request.contextPath}/findAllServlet" style="text-decoration:none;font-size:33px">查询用户信息列表
+	  href="${pageContext.request.contextPath}/contactServlet?action=findAll" style="text-decoration:none;font-size:33px">查询用户信息列表
 	</a>
   </div>
   </body>

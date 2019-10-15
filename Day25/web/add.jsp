@@ -23,7 +23,7 @@
 <body>
 <div class="container">
     <center><h3>添加联系人页面</h3></center>
-    <form action="${pageContext.request.contextPath}/addServlet" method="post">
+    <form action="${pageContext.request.contextPath}/contactServlet?action=add" method="post">
         <div class="form-group">
             <label for="name">姓名：</label>
             <input type="text" class="form-control" id="name" name="name" placeholder="请输入姓名">

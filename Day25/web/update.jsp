@@ -23,7 +23,7 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
 <body>
 <div class="container">
 	<h3 style="text-align: center;">修改联系人</h3>
-	<form action="${pageContext.request.contextPath}/updateServlet" method="post">
+	<form action="${pageContext.request.contextPath}/contactServlet?action=update" method="post">
 		<input type="hidden" id="id" name="id" value="${contact.id}">
 		<div class="form-group">
 			<label for="name">姓名：</label>
