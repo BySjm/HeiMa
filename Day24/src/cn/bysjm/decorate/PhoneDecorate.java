@@ -1,6 +1,6 @@
 package cn.bysjm.decorate;
 
-public abstract class PhoneDecorate implements Phone{
+public class PhoneDecorate implements Phone{
 
     private Phone phone;
 
