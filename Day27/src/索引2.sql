@@ -1,0 +1,12 @@
+CREATE TABLE teacher(
+  id INT,
+  NAME VARCHAR(32),
+  telephone VARCHAR(11),
+  PRIMARY KEY(id),
+  UNIQUE(telephone),
+  INDEX(NAME)
+);
+DROP INDEX NAME ON teacher;
+ALTER TABLE teacher ADD INDEX(NAME);
+ALTER TABLE teacher DROP INDEX `PRIMARY`;
+
