@@ -86,7 +86,7 @@ public class UserMapperTest extends BaseMapperTest {
         user.setAddress("上海");
         userMapper.saveForId(user);
 
-        System.out.println("------" + user.getId() + "------------");
+        System.out.println(user.getId());
     }
 
     @Test
@@ -97,7 +97,7 @@ public class UserMapperTest extends BaseMapperTest {
 //        user.setUsername("王");
         List<User> users = userMapper.findByIdAndUsernameIf(user);
         for (User user1 : users) {
-            System.out.println("-----------" + user1 + "--------------");
+            System.out.println(user1);
         }
     }
 
@@ -109,7 +109,7 @@ public class UserMapperTest extends BaseMapperTest {
         //user.setUsername("王");
         List<User> users = userMapper.findByIdAndUsernameChoose(user);
         for (User user1 : users) {
-            System.out.println("-----------" + user1 + "--------------");
+            System.out.println(user1);
         }
     }
 
@@ -138,7 +138,7 @@ public class UserMapperTest extends BaseMapperTest {
     @Test
     public void testFindByArray() throws Exception {
         UserMapper userMapper = sqlSession.getMapper(UserMapper.class);
-        int[] ids = {41,42,43};
+        int[] ids = {41, 42, 43};
         List<User> users = userMapper.findByArray(ids);
         for (User user : users) {
             System.out.println(user);

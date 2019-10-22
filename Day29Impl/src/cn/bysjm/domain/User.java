@@ -4,28 +4,21 @@ import javax.xml.crypto.Data;
 import java.util.Date;
 
 public class User {
-    private int id;
+    private Integer id;
+
     private String username;
+
     private Date birthday;
+
     private String sex;
+
     private String address;
 
-    public User() {
-    }
-
-    public User(int id, String username, Date birthday, String sex, String address) {
-        this.id = id;
-        this.username = username;
-        this.birthday = birthday;
-        this.sex = sex;
-        this.address = address;
-    }
-
-    public int getId() {
+    public Integer getId() {
         return id;
     }
 
-    public void setId(int id) {
+    public void setId(Integer id) {
         this.id = id;
     }
 
