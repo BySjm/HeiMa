@@ -1,0 +1,133 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="cn.bysjm.mapper.UserMapper">
+    
+    <sql id="userSelect">
+        select * from user
+    </sql>
+    
+<!--    <resultMap id="userResultMap" type="user">-->
+<!--        <id column="uid" property="id"/>-->
+<!--        <result column="name" property="username"/>-->
+<!--        <result column="pass" property="password"/>-->
+<!--    </resultMap>-->
+
+    <select id="findTest" resultType="user" parameterType="user">
+        select * from user where id = #{uid}
+    </select>
+
+    <select id="findAll" resultType="user">
+        select * from user
+    </select>
+
+    <insert id="save" parameterType="user">
+        insert into user (username,birthday,sex,address) values (#{username},#{birthday},#{sex},#{address})
+    </insert>
+
+    <update id="update" parameterType="user">
+        update user set address = #{address} where id = #{id}
+    </update>
+
+    <select id="findById" parameterType="int" resultType="user">
+        select * from user where id = #{id}
+    </select>
+
+    <delete id="delete" parameterType="int">
+        delete from user where id = #{id}
+    </delete>
+
+    <select id="findByParam" resultType="user">
+        select * from user where id = #{id} and username=#{username}
+    </select>
+
+    <select id="findByUserName" parameterType="string" resultType="user">
+        select * from user where username like concat(concat('%',#{username}),'%')
+    </select>
+
+    <!--
+    版本二
+       <selectKey>
+        keyColumn="id"  指定user表的主键字段名
+        keyProperty="id" 指定user实体的主键属性名
+        resultType="int" 指定user实体主键的类型
+        order="AFTER"  本条sql语句是在insert执行之前（执行），还是之后（执行）
+            after 执后执行
+            before 之前执行
+    -->
+    <insert id="saveForId">
+        <selectKey keyColumn="id" keyProperty="id" resultType="int" order="AFTER">
+            select LAST_INSERT_ID();
+        </selectKey>
+        insert into user (username,birthday,sex,address) values (#{username},#{birthday},#{sex},#{address})
+    </insert>
+
+    <select id="findByIdAndUsernameIf" parameterType="user" resultType="user">
+        select * from user
+        <where>
+            <if test="id != null">
+                and id = #{id}
+            </if>
+            <if test="username != null">
+                and username like concat(concat('%',#{username}),'%')
+            </if>
+        </where>
+    </select>
+    
+    <select id="findByIdAndUsernameChoose" resultType="user" parameterType="user">
+        select * from user 
+        <where>
+            <choose>
+                <when test="id != null">
+                    and id = #{id}
+                </when>
+                <when test="username != null">
+                    and username like concat(concat('%',#{username}),'%')
+                </when>
+                <otherwise>
+                    and 1 = 1;
+                </otherwise>
+            </choose>
+        </where>
+    </select>
+
+    <update id="updateIf" parameterType="user">
+        update user
+        <set>
+            <if test="username != null">
+                username = #{username},
+            </if>
+            <if test="birthday != null">
+                birthday = #{birthday},
+            </if>
+            <if test="sex != null">
+                sex = #{sex},
+            </if>
+            <if test="address != null">
+                address = #{address},
+            </if>
+        </set>
+        where id = #{id}
+    </update>
+    
+    <select id="findByList" parameterType="list" resultType="user">
+        select * from user where
+        <foreach collection="list" open="id in (" close=")" item="id" separator=",">
+            #{id}
+        </foreach>
+    </select>
+    
+    <select id="findByArray" parameterType="int[]" resultType="user">
+        select * from user where
+        <foreach collection="array" open="id in (" close=")" item="id" separator=",">
+            #{id}
+        </foreach>
+    </select>
+
+    <select id="findByPojo" parameterType="queryVo" resultType="user">
+        <include refid="userSelect"></include>where
+        <foreach collection="ids" open="id in (" close=")" item="id" separator=",">
+            #{id}
+        </foreach>
+    </select>
+
+</mapper>
