@@ -3,6 +3,9 @@
 <configuration>
     <!--加载第三方属性配置-->
     <properties resource="jdbc.properties"/>
+<!--    <settings>-->
+<!--        <setting name="lazyLoadingEnabled" value="true"/>-->
+<!--    </settings>-->
     <!--实体类型别名配置-->
     <typeAliases>
         <!--指定当前包下所有的实体设置别名-->

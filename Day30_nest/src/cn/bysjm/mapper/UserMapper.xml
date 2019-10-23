@@ -25,7 +25,7 @@
         <result column="birthday" property="birthday"></result>
         <result column="sex" property="sex"></result>
         <result column="address" property="address"></result>
-        <collection property="roleList" ofType="role" column="id" select="cn.bysjm.mapper.OrderMapper.findByUid"></collection>
+        <collection property="roleList" ofType="role" column="id" select="cn.bysjm.mapper.OrderMapper.findByUid" fetchType="lazy"></collection>
     </resultMap>
     <select id="findAllWithRole" resultMap="userAndRoleMap">
         SELECT * FROM `user` where id = #{id}
