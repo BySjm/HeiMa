@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="cn.bysjm.mapper.RoleMapper">
+    <select id="findByUid" resultType="role">
+        SELECT r.id,r.role_name roleName,r.role_desc roleDesc FROM `role` r INNER JOIN `user_role` ur ON r.id = ur.rid where id = #{id}
+    </select>
+</mapper>
