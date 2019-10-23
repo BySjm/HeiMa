@@ -22,7 +22,6 @@
     </environments>
 
     <mappers>
-<!--        <mapper resource="cn/bysjm/mapper/UserMapper.xml"/>-->
         <package name="cn.bysjm.mapper"/>
     </mappers>
 
