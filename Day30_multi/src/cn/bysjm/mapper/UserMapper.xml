@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="cn.bysjm.mapper.UserMapper">
+
+    <resultMap id="userMap" type="cn.bysjm.domain.User">
+        <id column="id" property="id"></id>
+        <result column="username" property="username"></result>
+        <result column="birthday" property="birthday"></result>
+        <result column="sex" property="sex"></result>
+        <result column="address" property="address"></result>
+        <collection property="orderList" ofType="cn.bysjm.domain.Order">
+            <id column="oid" property="id"></id>
+            <result column="ordertime" property="ordertime"></result>
+            <result column="money" property="money"></result>
+        </collection>
+    </resultMap>
+    <select id="findAllWithOrder" resultMap="userMap">
+        select *,o.id as oid from user u left join orders o on u.id = o.uid where o.uid = #{id}
+    </select>
+
+
+    <resultMap id="userAndRoleMap" type="cn.bysjm.domain.User">
+        <id column="id" property="id"></id>
+        <result column="username" property="username"></result>
+        <result column="birthday" property="birthday"></result>
+        <result column="sex" property="sex"></result>
+        <result column="address" property="address"></result>
+        <collection property="roleList" ofType="cn.bysjm.domain.Role">
+            <id column="rid" property="id"></id>
+            <result column="role_name" property="roleName"></result>
+            <result column="role_desc" property="roleDesc"></result>
+        </collection>
+    </resultMap>
+    <select id="findAllWithRole" resultMap="userAndRoleMap">
+        SELECT * FROM `user` u LEFT JOIN `user_role` ur ON u.`id` = ur.`uid` INNER JOIN `role` r ON ur.`rid` = r.`id`
+    </select>
+
+</mapper>
