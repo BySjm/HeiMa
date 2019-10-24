@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="cn.bysjm.dao.EmpDao">
+
+    <select id="findAll" resultType="emp">
+        select * from emp
+    </select>
+
+    <delete id="dels" parameterType="string">
+        delete from emp where
+        <foreach collection="array" open="id in(" close=")" item="id" separator=",">
+            #{id}
+        </foreach>
+    </delete>
+
+    <select id="findByCount" resultType="int">
+        select count(*) from emp
+    </select>
+
+    <select id="findByList" resultType="emp">
+        select * from emp limit #{index},#{pageSize}
+    </select>
+
+</mapper>
