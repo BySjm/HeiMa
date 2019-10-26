@@ -6,7 +6,6 @@ import org.apache.ibatis.session.SqlSession;
 
 public class TestEmpDao {
     public static void main(String[] args) {
-        Integer totalPage = (int) Math.ceil(16 * 1.0 / 4);
-        System.out.println(totalPage);
+        System.out.println(Math.ceil(16 / 5));
     }
 }

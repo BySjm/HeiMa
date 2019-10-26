@@ -21,4 +21,41 @@
         select * from emp limit #{index},#{pageSize}
     </select>
 
+    <select id="findByConditionCount" parameterType="QueryVo" resultType="int">
+        select count(*) from emp
+        <where>
+            <if test="ename !=null and ename !=''">
+                and ename like concat(concat('%',#{ename}),'%')
+            </if>
+            <if test="address !=null and address != ''">
+                and address = #{address}
+            </if>
+        </where>
+    </select>
+
+    <select id="findByConditionList" parameterType="QueryVo" resultType="Emp">
+        select * from emp
+        <where>
+            <if test="ename != null and ename != ''">
+                and ename like concat(concat('%',#{ename}),'%')
+            </if>
+            <if test="address != null and address != ''">
+                and address = #{address}
+            </if>
+        </where>
+        limit #{index},#{pageSize}
+    </select>
+
+    <select id="updateData" resultType="Emp" parameterType="int">
+        select * from emp where id = #{id}
+    </select>
+
+    <update id="update" parameterType="Emp">
+        update emp set ename = #{ename},sex = #{sex},joindate=#{joindate},salary=#{salary},address=#{address} where id = #{id}
+    </update>
+
+    <insert id="addEmp" parameterType="Emp" >
+        insert into emp (id,ename,sex,joindate,salary,address) values (#{id},#{ename},#{sex},#{joindate},#{salary},#{address})
+    </insert>
+
 </mapper>

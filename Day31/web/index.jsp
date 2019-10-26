@@ -18,7 +18,7 @@
   <body>
   <div align="center">
   	<a
-	  href="${pageContext.request.contextPath}/empServlet?action=findByPage&currentPage=1&pageSize=5" style="text-decoration:none;font-size:33px">查询用户信息列表
+	  href="${pageContext.request.contextPath}/empServlet?action=findByCondition&currentPage=1&pageSize=5" style="text-decoration:none;font-size:33px">查询用户信息列表
 	</a>
   </div>
   </body>

@@ -30,18 +30,18 @@
 <body>
 <div class="container">
     <h3 style="text-align: center">员工信息列表</h3>
-    <form action="" method="post">
+    <form action="${pageContext.request.contextPath}/empServlet?action=findByCondition&currentPage=1&pageSize=5" method="post">
         <table border="1" class="table table-bordered table-hover">
             <tr class="success">
                 <td>
-                    姓名： <input type="text" name="ename" value="">
+                    姓名： <input type="text" name="ename" value="${ename}">
                     地址：
                     <select name="address" id="address">
                         <option value="">--请选择--</option>
-                        <option value="北京">北京</option>
-                        <option value="上海">上海</option>
-                        <option value="广州">广州</option>
-                        <option value="深圳">深圳</option>
+                        <option value="北京" <c:if test="${address == '北京'}">selected</c:if>>北京</option>
+                        <option value="上海" <c:if test="${address == '上海'}">selected</c:if>>上海</option>
+                        <option value="广州" <c:if test="${address == '广州'}">selected</c:if>>广州</option>
+                        <option value="深圳" <c:if test="${address == '深圳'}">selected</c:if>>深圳</option>
                     </select>
                     <input type="submit" value="搜索" class="btn btn-primary">
                 </td>
@@ -73,8 +73,10 @@
                     <td>${emp.joindate}</td>
                     <td>${emp.salary}</td>
                     <td>${emp.address}</td>
-                    <td><a class="btn btn-default btn-sm" href="update.jsp">修改</a>&nbsp;<a
-                            class="btn btn-default btn-sm" href="">删除</a></td>
+                    <td><a class="btn btn-default btn-sm"
+                           href="${pageContext.request.contextPath}/empServlet?action=updateData&id=${emp.id}">修改</a>&nbsp;
+                        <a class="btn btn-default btn-sm" onclick="return confirm('确定要删除吗？')"
+                           href="${pageContext.request.contextPath}/empServlet?action=dels&id=${emp.id}">删除</a></td>
                 </tr>
             </c:forEach>
             <tr>
@@ -90,7 +92,7 @@
             <%-- 上一页 --%>
             <c:if test="${pageBean.currentPage > 1}">
                 <li>
-                    <a href="${pageContext.request.contextPath}/empServlet?action=findByPage&currentPage=${pageBean.currentPage - 1}&pageSize=5">
+                    <a href="${pageContext.request.contextPath}/empServlet?action=findByCondition&currentPage=${pageBean.currentPage - 1}&pageSize=5&ename=${ename}&address=${address}">
                         <span>&laquo;</span>
                     </a>
                 </li>
@@ -99,19 +101,19 @@
             <c:forEach begin="1" end="${pageBean.totalPage}" var="page">
                 <c:if test="${pageBean.currentPage == page}">
                     <li class="active"><a
-                            href="${pageContext.request.contextPath}/empServlet?action=findByPage&currentPage=${page}&pageSize=5">${page}</a>
+                            href="${pageContext.request.contextPath}/empServlet?action=findByCondition&currentPage=${page}&pageSize=5&ename=${ename}&address=${address}">${page}</a>
                     </li>
                 </c:if>
                 <c:if test="${pageBean.currentPage != page}">
                     <li>
-                        <a href="${pageContext.request.contextPath}/empServlet?action=findByPage&currentPage=${page}&pageSize=5">${page}</a>
+                        <a href="${pageContext.request.contextPath}/empServlet?action=findByCondition&currentPage=${page}&pageSize=5&ename=${ename}&address=${address}">${page}</a>
                     </li>
                 </c:if>
             </c:forEach>
             <%-- 下一页 --%>
             <c:if test="${pageBean.currentPage < pageBean.totalPage}">
                 <li>
-                    <a href="${pageContext.request.contextPath}/empServlet?action=findByPage&currentPage=${pageBean.currentPage + 1}&pageSize=5">
+                    <a href="${pageContext.request.contextPath}/empServlet?action=findByCondition&currentPage=${pageBean.currentPage + 1}&pageSize=5&ename=${ename}&address=${address}">
                         <span>&raquo;</span>
                     </a>
                 </li>

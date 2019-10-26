@@ -1,3 +1,4 @@
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <!-- 网页使用的语言 -->
 <html lang="zh-CN">
@@ -23,35 +24,36 @@
 <body>
 <div class="container">
     <center><h3>修改员工页面</h3></center>
-    <form action="" method="post">
+    <form action="${pageContext.request.contextPath}/empServlet?action=updateEmp" method="post">
+        <input type="text" name="id" value="${emp.id}" hidden="hidden">
         <div class="form-group">
             <label for="ename">姓名：</label>
-            <input type="text" class="form-control" id="ename" name="ename" placeholder="请输入姓名">
+            <input type="text" class="form-control" id="ename" name="ename" placeholder="请输入姓名" value="${emp.ename}">
         </div>
 
         <div class="form-group">
             <label>性别：</label>
-            <input type="radio" name="sex" value="男" checked="checked"/>男
-            <input type="radio" name="sex" value="女"/>女
+            <input type="radio" name="sex" value="男" <c:if test="${emp.sex == '男'}">checked</c:if> />男
+            <input type="radio" name="sex" value="女" <c:if test="${emp.sex == '女'}">checked</c:if>/>女
         </div>
 
         <div class="form-group">
             <label for="joindate">入职日期：</label>
-            <input type="date" class="form-control" id="joindate" name="joindate" >
+            <input type="date" class="form-control" id="joindate" name="joindate" value="${emp.joindate}">
         </div>
         <div class="form-group">
             <label for="salary">工资：</label>
-            <input type="text" class="form-control" id="salary" name="salary" placeholder="请输入工资">
+            <input type="text" class="form-control" id="salary" name="salary" placeholder="请输入工资" value="${emp.salary}">
         </div>
 
         <div class="form-group">
             <label for="address">地址：</label>
             <select name="address" class="form-control"  id="address">
                 <option value="">--请选择--</option>
-                <option value="北京">北京</option>
-                <option value="上海">上海</option>
-                <option value="广州">广州</option>
-                <option value="深圳">深圳</option>
+                <option value="北京" <c:if test="${emp.address == '北京'}">selected</c:if>>北京</option>
+                <option value="上海" <c:if test="${emp.address == '上海'}">selected</c:if>>上海</option>
+                <option value="广州" <c:if test="${emp.address == '广州'}">selected</c:if>>广州</option>
+                <option value="深圳" <c:if test="${emp.address == '深圳'}">selected</c:if>>深圳</option>
             </select>
         </div>
         <div class="form-group" style="text-align: center">

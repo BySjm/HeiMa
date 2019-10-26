@@ -23,7 +23,7 @@
 <body>
 <div class="container">
     <center><h3>添加员工页面</h3></center>
-    <form action="" method="post">
+    <form action="${pageContext.request.contextPath}/empServlet?action=addEmp" method="post">
         <div class="form-group">
             <label for="ename">姓名：</label>
             <input type="text" class="form-control" id="ename" name="ename" placeholder="请输入姓名">
