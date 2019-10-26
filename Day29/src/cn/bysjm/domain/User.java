@@ -1,6 +1,5 @@
 package cn.bysjm.domain;
 
-import javax.xml.crypto.Data;
 import java.util.Date;
 
 public class User {
